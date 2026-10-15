@@ -2,36 +2,47 @@
 
 A notebook-based NLP project organized around sentiment classification with transformer models, including BERT, RoBERTa, and GPT-2 fine-tuning experiments.
 
-## Repository contents
+## 📌 Table of Contents
 
-| File | Purpose |
-|---|---|
-| `P15_Comparative_Analysis_of_Transformer_Models_for_NLP_Tasks.ipynb` | Data inspection, preprocessing, splitting, and transformer experiments |
-| `README.md` | Project documentation |
+- [Overview](#-overview)
+- [Problem Statement](#-problem-statement)
+- [Objectives](#-objectives)
+- [Features](#-features)
+- [Dataset](#-dataset)
+- [Tech Stack](#-tech-stack)
+- [Project Workflow](#-project-workflow)
+- [Repository Structure](#-repository-structure)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Results and Insights](#-results-and-insights)
+- [Screenshots](#-screenshots)
+- [Challenges and Solutions](#-challenges-and-solutions)
+- [Limitations](#-limitations)
+- [Future Improvements](#-future-improvements)
+- [What I Learned](#-what-i-learned)
+- [Author](#-author)
+- [License](#-license)
 
-## Dataset profile recorded in the notebook
+## 📖 Overview
 
-The saved notebook output reports **20,559 rows × 2 columns** after loading `IMDB Dataset.csv`. The two fields shown are `review` and `sentiment`.
+A notebook-based NLP project organized around sentiment classification with transformer models, including BERT, RoBERTa, and GPT-2 fine-tuning experiments.
 
-**Important reproducibility gap:** `IMDB Dataset.csv` does not appear in the repository root file inventory. The notebook expects this file, so a fresh checkout will not reproduce the dataset loading step unless the file is obtained from its original authorized source and placed at the expected path. Confirm whether `on_bad_lines="skip"` removed malformed records before reporting the dataset dimensions as source-dataset size.
+## 🎯 Problem Statement
 
-## Notebook workflow
+The project frames an analytical or engineering question using the data, code, and outputs available in this repository. Findings should be interpreted according to the documented dataset, methodology, and limitations.
 
-1. Load the review text and sentiment labels.
-2. Inspect dataset shape and label distribution.
-3. Perform review-length exploration and select a sequence truncation strategy.
-4. Split data for model development.
-5. Tokenize text with Hugging Face Transformers.
-6. Fine-tune the transformer architectures implemented in the notebook.
-7. Compare performance using consistent validation/test data and appropriate classification metrics.
+## 🎯 Objectives
 
-## Tools
+- Understand the data and project question.
+- Document the implemented analytical or engineering workflow.
+- Report measurable results only where supported by repository evidence.
+- Make the work reproducible for reviewers.
 
-Python, pandas, NLTK, scikit-learn, Hugging Face Transformers, PyTorch, and Jupyter/Colab, based on notebook imports and cells.
+## ✨ Features
 
-The notebook documentation recommends Python 3.10 in a Conda environment; dependency versions and hardware requirements should be recorded for reproducibility.
+The features below are limited to the work described in the existing repository documentation.
 
-## Results and validation status
+### Results and validation status
 
 The notebook contains a section for comparing BERT, RoBERTa, and GPT-2, but the connector-visible saved outputs did not provide a complete, comparable result table for accuracy, F1, training time, or inference latency. No model winner or performance percentage is claimed here.
 
@@ -43,7 +54,50 @@ For a defensible comparison, publish:
 - Runtime/latency measurements only if actually recorded.
 - A clear indication of which result is validation versus final test performance.
 
-## Reproduce
+## 📂 Dataset
+
+### Dataset profile recorded in the notebook
+
+The saved notebook output reports **20,559 rows × 2 columns** after loading `IMDB Dataset.csv`. The two fields shown are `review` and `sentiment`.
+
+**Important reproducibility gap:** `IMDB Dataset.csv` does not appear in the repository root file inventory. The notebook expects this file, so a fresh checkout will not reproduce the dataset loading step unless the file is obtained from its original authorized source and placed at the expected path. Confirm whether `on_bad_lines="skip"` removed malformed records before reporting the dataset dimensions as source-dataset size.
+
+## 🛠️ Tech Stack
+
+### Tools
+
+Python, pandas, NLTK, scikit-learn, Hugging Face Transformers, PyTorch, and Jupyter/Colab, based on notebook imports and cells.
+
+The notebook documentation recommends Python 3.10 in a Conda environment; dependency versions and hardware requirements should be recorded for reproducibility.
+
+## 🔄 Project Workflow
+
+### Notebook workflow
+
+1. Load the review text and sentiment labels.
+2. Inspect dataset shape and label distribution.
+3. Perform review-length exploration and select a sequence truncation strategy.
+4. Split data for model development.
+5. Tokenize text with Hugging Face Transformers.
+6. Fine-tune the transformer architectures implemented in the notebook.
+7. Compare performance using consistent validation/test data and appropriate classification metrics.
+
+## 🗂️ Repository Structure
+
+### Repository contents
+
+| File | Purpose |
+|---|---|
+| `P15_Comparative_Analysis_of_Transformer_Models_for_NLP_Tasks.ipynb` | Data inspection, preprocessing, splitting, and transformer experiments |
+| `README.md` | Project documentation |
+
+## ⚙️ Installation
+
+### Prerequisites\n\nUse the runtime and dependencies required by the actual source files. Check the repository for a requirements or environment file before installing packages.\n\n### Setup\n\n\`\`\`bash\ngit clone https://github.com/sahil2003-ai/${repo}.git\ncd ${repo}\n\`\`\`
+
+## ▶️ Usage
+
+### Reproduce
 
 1. Create a Conda environment with a compatible Python version.
 2. Install the libraries imported by the notebook, including Transformers and PyTorch.
@@ -53,17 +107,62 @@ For a defensible comparison, publish:
 
 A root-level `requirements.txt` was not found in the repository inventory.
 
-## Limitations
+## 📊 Results and Insights
+
+### Results and validation status
+
+The notebook contains a section for comparing BERT, RoBERTa, and GPT-2, but the connector-visible saved outputs did not provide a complete, comparable result table for accuracy, F1, training time, or inference latency. No model winner or performance percentage is claimed here.
+
+For a defensible comparison, publish:
+- Exact dataset source and final row count after preprocessing.
+- Train/validation/test split and random seed.
+- Per-model accuracy, precision, recall, F1, and confusion matrix.
+- Training environment, model configuration, sequence length, and epochs.
+- Runtime/latency measurements only if actually recorded.
+- A clear indication of which result is validation versus final test performance.
+
+## Additional Project Documentation\n\n### Author
+
+Sahil Gaikwad · [GitHub](https://github.com/sahil2003-ai) · [LinkedIn](https://www.linkedin.com/in/sahil-gaikwad-a76b7224a/)\n## 🖼️ Screenshots
+
+No verified screenshot path was identified in the existing README. Add real screenshots from the repository only when the corresponding image files exist.
+
+## 🧩 Challenges and Solutions
+
+### Validation and reproducibility
+
+| Challenge | Approach |
+|---|---|
+| Metrics can be mistaken for independently verified results | Preserve the evidence status stated in the existing documentation. |
+| Data sources, filters, or execution environments may differ | Confirm source paths, schema, dependencies, and calculation definitions when rerunning. |
+| Screenshots and dashboard outputs may not be independently accessible | Only link to real files present in the repository. |
+
+## ⚠️ Limitations
+
+### Limitations
 
 - The required CSV is not included in the repository.
 - Notebook outputs do not establish a verified, apples-to-apples model comparison by themselves.
 - Transformer scores depend on model/version, training budget, split, and hardware.
 - Avoid publishing review text beyond the source dataset's license.
 
-## Skills demonstrated
+## 🚀 Future Improvements
+
+- [ ] Document dataset source, license, and data dictionary.\n- [ ] Add reproducible execution instructions and dependency versions.\n- [ ] Export validated result tables and genuine screenshots.\n- [ ] Add tests or cross-tool checks for important calculations.
+
+## 📚 What I Learned
+
+### Skills demonstrated
 
 NLP data preparation, text classification, tokenizer workflows, transformer fine-tuning, evaluation design, and reproducible experiment documentation.
 
-## Author
+## 👤 Author
 
-Sahil Gaikwad · [GitHub](https://github.com/sahil2003-ai) · [LinkedIn](https://www.linkedin.com/in/sahil-gaikwad-a76b7224a/)
+**Sahil Gaikwad**
+
+- GitHub: [sahil2003-ai](https://github.com/sahil2003-ai)
+- LinkedIn: [Sahil Gaikwad](https://www.linkedin.com/in/sahil-gaikwad-a76b7224a/)
+
+## 📄 License
+
+No verified license statement was found in the README. Check the repository's LICENSE file and the source dataset's reuse terms before redistribution.
