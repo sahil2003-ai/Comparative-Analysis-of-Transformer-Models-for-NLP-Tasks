@@ -1,147 +1,69 @@
 # Comparative Analysis of Transformer Models for NLP Tasks
 
-> Notebook-based study intended to compare transformer models on an NLP task.
+A notebook-based NLP project organized around sentiment classification with transformer models, including BERT, RoBERTa, and GPT-2 fine-tuning experiments.
 
-![Status](https://img.shields.io/badge/Status-Portfolio--Project-blue)
+## Repository contents
 
-## 📌 Table of Contents
-
-- [Overview](#overview)
-- [Problem Statement](#problem-statement)
-- [Objectives](#objectives)
-- [Features](#features)
-- [Dataset](#dataset)
-- [Tech Stack](#tech-stack)
-- [Project Workflow](#project-workflow)
-- [Repository Structure](#repository-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Results and Insights](#results-and-insights)
-- [Screenshots](#screenshots)
-- [Challenges and Solutions](#challenges-and-solutions)
-- [Limitations](#limitations)
-- [Future Improvements](#future-improvements)
-- [What I Learned](#what-i-learned)
-- [Author](#author)
-- [License](#license)
-
-## 📖 Overview
-
-Notebook-based study intended to compare transformer models on an NLP task. This README documents the intended workflow and the files available in the repository. Verify all outputs against the current code and data before using them as evidence.
-
-## 🎯 Problem Statement
-
-Model comparisons are useful only when datasets, splits, metrics, and training conditions are documented consistently.
-
-## 🎯 Objectives
-
-- Identify the implemented task and models.
-- Compare models under a consistent evaluation protocol.
-- Document performance and resource trade-offs.
-
-## ✨ Features
-
-- P15_Comparative_Analysis_of_Transformer_Models_for_NLP_Tasks.ipynb.
-- Notebook-based experiment workflow.
-
-## 📂 Dataset
-
-Dataset details must be read from the notebook; source, license, labels, and row count are not asserted here.
-
-- **Privacy and licensing:** Check source terms and avoid publishing personal, sensitive, or restricted data.
-- **Preprocessing:** Follow the actual SQL/notebook/report implementation; do not assume cleaning steps or row counts that have not been verified.
-
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
+| File | Purpose |
 |---|---|
-| Python | Experiment code |
-| PyTorch | Deep learning where used |
-| Hugging Face Transformers | Model/tokenizer workflow where used |
-| Jupyter Notebook | Experiment documentation |
+| `P15_Comparative_Analysis_of_Transformer_Models_for_NLP_Tasks.ipynb` | Data inspection, preprocessing, splitting, and transformer experiments |
+| `README.md` | Project documentation |
 
-## 🔄 Project Workflow
+## Dataset profile recorded in the notebook
 
-1. Open the notebook and identify task, dataset, labels, models, and dependencies actually used.
-2. Document data provenance and fix train/validation/test splits.
-3. Establish a simple baseline and define evaluation metrics.
-4. Run the implemented models using comparable data and evaluation settings.
-5. Track seeds, hyperparameters, hardware, training time, and inference latency if measured.
-6. Select models using validation data and evaluate once on the held-out test set.
-7. Analyze errors and publish only reproducible results.
+The saved notebook output reports **20,559 rows × 2 columns** after loading `IMDB Dataset.csv`. The two fields shown are `review` and `sentiment`.
 
-## 🗂️ Repository Structure
+**Important reproducibility gap:** `IMDB Dataset.csv` does not appear in the repository root file inventory. The notebook expects this file, so a fresh checkout will not reproduce the dataset loading step unless the file is obtained from its original authorized source and placed at the expected path. Confirm whether `on_bad_lines="skip"` removed malformed records before reporting the dataset dimensions as source-dataset size.
 
-```text
-Comparative-Analysis-of-Transformer-Models-for-NLP-Tasks/
-├── P15_Comparative_Analysis_of_Transformer_Models_for_NLP_Tasks.ipynb
-└── README.md
-└── README.md
-```
+## Notebook workflow
 
-The list above highlights known project files and folders; inspect the repository for the complete current structure.
+1. Load the review text and sentiment labels.
+2. Inspect dataset shape and label distribution.
+3. Perform review-length exploration and select a sequence truncation strategy.
+4. Split data for model development.
+5. Tokenize text with Hugging Face Transformers.
+6. Fine-tune the transformer architectures implemented in the notebook.
+7. Compare performance using consistent validation/test data and appropriate classification metrics.
 
-## ⚙️ Installation
+## Tools
 
-### Prerequisites
+Python, pandas, NLTK, scikit-learn, Hugging Face Transformers, PyTorch, and Jupyter/Colab, based on notebook imports and cells.
 
-- Install the tools listed in the Tech Stack that apply to this project.
-- For Python projects, use a Python version compatible with the dependencies actually imported by the code.
-- For Power BI projects, use Power BI Desktop.
+The notebook documentation recommends Python 3.10 in a Conda environment; dependency versions and hardware requirements should be recorded for reproducibility.
 
-### Setup
+## Results and validation status
 
-Use Jupyter or Colab and install the dependencies imported by the notebook. A requirements.txt was not listed at the repository root.
+The notebook contains a section for comparing BERT, RoBERTa, and GPT-2, but the connector-visible saved outputs did not provide a complete, comparable result table for accuracy, F1, training time, or inference latency. No model winner or performance percentage is claimed here.
 
-Do not run generic commands that do not match the files in this repository. Confirm the data paths, database dialect, and package versions before execution.
+For a defensible comparison, publish:
+- Exact dataset source and final row count after preprocessing.
+- Train/validation/test split and random seed.
+- Per-model accuracy, precision, recall, F1, and confusion matrix.
+- Training environment, model configuration, sequence length, and epochs.
+- Runtime/latency measurements only if actually recorded.
+- A clear indication of which result is validation versus final test performance.
 
-## ▶️ Usage
+## Reproduce
 
-Open the notebook and execute cells in order after confirming data access and available compute.
+1. Create a Conda environment with a compatible Python version.
+2. Install the libraries imported by the notebook, including Transformers and PyTorch.
+3. Obtain the dataset from an authorized source; do not commit restricted data.
+4. Place it at the path expected by the notebook or update the loading cell.
+5. Run the notebook from the first cell and save the result tables for all models.
 
-## 📊 Results and Insights
+A root-level `requirements.txt` was not found in the repository inventory.
 
-### Key Findings
+## Limitations
 
-Add a comparison table only after confirming which models ran and reproducing their test metrics.
+- The required CSV is not included in the repository.
+- Notebook outputs do not establish a verified, apples-to-apples model comparison by themselves.
+- Transformer scores depend on model/version, training budget, split, and hardware.
+- Avoid publishing review text beyond the source dataset's license.
 
-### Evaluation
+## Skills demonstrated
 
-For analytics projects, reconcile key totals and document metric definitions. For ML projects, report the baseline, split strategy, relevant metrics, and held-out evaluation results. Do not include unverified scores or business impact claims.
+NLP data preparation, text classification, tokenizer workflows, transformer fine-tuning, evaluation design, and reproducible experiment documentation.
 
-## 🖼️ Screenshots
+## Author
 
-No image files were confirmed for this repository during this update. If you have screenshots, upload them into an `images/` folder, then embed each real path here with a short caption. Do not use placeholder image paths.
-
-## 🧩 Challenges and Solutions
-
-| Challenge | Solution / validation approach |
-|---|---|
-| Fair model comparison | Keep splits, metrics, and evaluation procedures consistent across runs. |
-
-## ⚠️ Limitations
-
-- Model list, dataset, scores, and hardware details need confirmation from the notebook.
-- No screenshots were found in the repository.
-
-## 🚀 Future Improvements
-
-- [ ] Add requirements/environment details.
-- [ ] Add experiment result tables and charts under images/.
-- [ ] Document error analysis and compute requirements.
-
-## 📚 What I Learned
-
-- Transformer experimentation and evaluation design.
-- Reproducibility in model comparisons.
-
-## 👤 Author
-
-**Sahil Gaikwad**
-
-- GitHub: [sahil2003-ai](https://github.com/sahil2003-ai)
-- LinkedIn: [Sahil Gaikwad](https://www.linkedin.com/in/sahil-gaikwad-a76b7224a/)
-
-## 📄 License
-
-Check dataset/model licenses and repository license.
+Sahil Gaikwad · [GitHub](https://github.com/sahil2003-ai) · [LinkedIn](https://www.linkedin.com/in/sahil-gaikwad-a76b7224a/)
