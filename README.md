@@ -2,6 +2,8 @@
 
 A notebook-based NLP project organized around sentiment classification with transformer models, including BERT, RoBERTa, and GPT-2 fine-tuning experiments.
 
+![Status](https://img.shields.io/badge/Status-Documented-yellow)
+
 ## 📌 Table of Contents
 
 - [Overview](#-overview)
@@ -29,30 +31,26 @@ A notebook-based NLP project organized around sentiment classification with tran
 
 ## 🎯 Problem Statement
 
-The project frames an analytical or engineering question using the data, code, and outputs available in this repository. Findings should be interpreted according to the documented dataset, methodology, and limitations.
+The project addresses a data-analysis or modeling question using the dataset and implementation available in this repository. The aim is to produce transparent, reproducible evidence rather than unsupported performance claims.
 
 ## 🎯 Objectives
 
-- Understand the data and project question.
-- Document the implemented analytical or engineering workflow.
-- Report measurable results only where supported by repository evidence.
-- Make the work reproducible for reviewers.
+- Understand the data and define the target or business question.
+- Document data preparation, feature engineering, and analysis/modeling steps.
+- Report available metrics with their evidence and validation status.
+- Make the workflow reproducible and explain limitations.
 
 ## ✨ Features
 
-The features below are limited to the work described in the existing repository documentation.
+### Notebook workflow
 
-### Results and validation status
-
-The notebook contains a section for comparing BERT, RoBERTa, and GPT-2, but the connector-visible saved outputs did not provide a complete, comparable result table for accuracy, F1, training time, or inference latency. No model winner or performance percentage is claimed here.
-
-For a defensible comparison, publish:
-- Exact dataset source and final row count after preprocessing.
-- Train/validation/test split and random seed.
-- Per-model accuracy, precision, recall, F1, and confusion matrix.
-- Training environment, model configuration, sequence length, and epochs.
-- Runtime/latency measurements only if actually recorded.
-- A clear indication of which result is validation versus final test performance.
+1. Load the review text and sentiment labels.
+2. Inspect dataset shape and label distribution.
+3. Perform review-length exploration and select a sequence truncation strategy.
+4. Split data for model development.
+5. Tokenize text with Hugging Face Transformers.
+6. Fine-tune the transformer architectures implemented in the notebook.
+7. Compare performance using consistent validation/test data and appropriate classification metrics.
 
 ## 📂 Dataset
 
@@ -121,21 +119,17 @@ For a defensible comparison, publish:
 - Runtime/latency measurements only if actually recorded.
 - A clear indication of which result is validation versus final test performance.
 
-## Additional Project Documentation\n\n### Author
+## 🖼️ Screenshots
 
-Sahil Gaikwad · [GitHub](https://github.com/sahil2003-ai) · [LinkedIn](https://www.linkedin.com/in/sahil-gaikwad-a76b7224a/)\n## 🖼️ Screenshots
-
-No verified screenshot path was identified in the existing README. Add real screenshots from the repository only when the corresponding image files exist.
+Add genuine charts or app screenshots stored in the repository. Do not use mock screenshots or claim that a file exists unless verified.
 
 ## 🧩 Challenges and Solutions
 
-### Validation and reproducibility
-
-| Challenge | Approach |
+| Challenge | Solution |
 |---|---|
-| Metrics can be mistaken for independently verified results | Preserve the evidence status stated in the existing documentation. |
-| Data sources, filters, or execution environments may differ | Confirm source paths, schema, dependencies, and calculation definitions when rerunning. |
-| Screenshots and dashboard outputs may not be independently accessible | Only link to real files present in the repository. |
+| Saved outputs may not match current data or dependencies | Rerun the workflow and compare fresh outputs. |
+| High model scores can be caused by leakage or an unsuitable split | Validate feature timing, target construction, split strategy, and baseline. |
+| Results may be hard to reproduce | Document package versions, input paths, and random seeds where applicable. |
 
 ## ⚠️ Limitations
 
@@ -152,9 +146,10 @@ No verified screenshot path was identified in the existing README. Add real scre
 
 ## 📚 What I Learned
 
-### Skills demonstrated
-
-NLP data preparation, text classification, tokenizer workflows, transformer fine-tuning, evaluation design, and reproducible experiment documentation.
+- Building a reproducible data science workflow.
+- Choosing and interpreting task-appropriate evaluation metrics.
+- Separating descriptive associations from causal claims.
+- Documenting model limitations alongside results.
 
 ## 👤 Author
 
